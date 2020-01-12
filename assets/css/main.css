@@ -1,0 +1,17 @@
+#calendar-container{
+    display: flex;
+}
+
+#calendar-container > div{
+    margin: 10px;
+}
+
+#calendar-container .left{
+    width: 66%;
+}
+
+#calendar-container .right{
+    background: #eee;
+    border-radius: 5px;
+    width: 34%;
+}
