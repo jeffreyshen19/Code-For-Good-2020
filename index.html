@@ -26,6 +26,59 @@
                 <div id = "calendar" class = "left">
                 </div>
                 <div class = "right">
+                    <!-- Email -->
+                    Email address:<br>
+                    <input type="text" name="email" placeholder = "Valid email address"><br>
+
+                    <!-- Room -->
+                    Which room would you like to rent?<br>
+
+                    <!-- TODO: add iamges -->
+                    <input type="radio" name="room" value="library">Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
+                    <input type="radio" name="room" value="fuller">Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
+
+                    <!-- Table and Chair -->
+                    Optional - Table and Chair Rental for Fuller Room, Additional Flat Fee $25
+                    <input type="radio" name="table-chair-rental" value="yes">Yes<br>
+                    <input type="radio" name="table-chair-rental" value="no">No<br>
+
+                    <!-- Number of table and chairs  -->
+                    If yes, please list number of chairs, round tables, and/or rectangular tables you would like for your event.<br>
+                    <input type="text" name="num-chair-table"><br>
+
+                    <!-- Description  -->
+                    Description of event<br>
+                    <input type="text" name="description"><br>
+
+                    <!-- Number of people attending -->
+                    Estimated number of people attending
+                    <input type="radio" name="num-people" value="under-10">Under 10 People<br>
+                    <input type="radio" name="num-people" value="20-30">20 to 30 People<br>
+                    <input type="radio" name="num-people" value="30-50">30 to 50 People (Fuller Room Only)<br>
+
+                    <!-- Email -->
+                    Organization (if applicable)<br>
+                    <input type="text" name="organization"><br>
+
+                    <!-- Mailing Address -->
+                    Mailing address<br>
+                    <input type="text" name="mailing-address"><br>
+
+                    <!-- Name -->
+                    Contact's First and Last Name<br>
+                    <input type="text" name="contact-name"><br>
+
+                    <!-- Phone Number -->
+                    Contact's Phone Number<br>
+                    <input type="text" name="contact-phone"><br>
+
+                    <!-- Terms of Service -->
+                    Please check the box below:<br>
+                    <input type="checkbox" name="vehicle1" value="Bike"> I agree to the above Terms & Conditions.<br>
+
+                    <!-- Signature -->
+                    Form completed by <br>
+                    <input type="text" name="signature"><br>
                 </div>
             </div>
         </form>
