@@ -51,7 +51,7 @@ function generateCalendar(){
         minTime: "08:00",
         maxTime: "22:00",
         timeZone: 'America/New_York',
-        height: "auto",
+        height: "parent",
         allDaySlot: false,
         nowIndicator: true, //Show current time
         businessHours: availability[roomSelected] //get availability, based on the room selected;

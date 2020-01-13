@@ -1,9 +1,11 @@
 body{
     font-family: "IBM Plex Sans";
+    margin: 0;
 }
 
 #calendar-container{
     display: flex;
+    height: calc(100vh - 20px);
 }
 
 #calendar-container > div{
@@ -21,6 +23,8 @@ body{
     padding: 0 20px 15px;
     box-sizing: border-box;
     font-size: 15px;
+    height: 100%;
+    overflow-y: scroll;
 }
 
 #calendar-container #form.right .label{
