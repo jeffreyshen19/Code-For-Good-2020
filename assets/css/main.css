@@ -10,12 +10,31 @@ body{
     margin: 10px;
 }
 
-#calendar-container .left{
+#calendar-container #calendar.left{
     width: 66%;
 }
 
-#calendar-container .right{
+#calendar-container #form.right{
     background: #eee;
     border-radius: 5px;
     width: 34%;
+    padding: 0 20px 15px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+#calendar-container #form.right .label{
+    font-weight: 600;
+    font-size: 17px;
+    margin: 15px 0 0;
+}
+
+#calendar-container #form.right input[type = "text"]{
+    width: 100%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    margin-top: 2px;
+    font-size: 12px;
 }

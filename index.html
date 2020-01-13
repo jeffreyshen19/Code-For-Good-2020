@@ -15,7 +15,7 @@
     <script src = "./includes/jquery-3.4.1.min.js"></script>
 
     <!-- Import Styles -->
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600,700&display=swap" rel="stylesheet">
     <link href = "./assets/css/main.css" rel = "stylesheet" type = "text/css">
 </head>
 <body>
@@ -26,59 +26,58 @@
             <div class = "section" id = "calendar-container">
                 <div id = "calendar" class = "left">
                 </div>
-                <div class = "right">
+                <div id = "form" class = "right">
                     <!-- Email -->
-                    Email address:<br>
-                    <input type="text" name="email" placeholder = "Valid email address"><br>
+                    <p class= "label">Email address</p>
+                    <input type="text" name="email"><br>
 
                     <!-- Room -->
-                    Which room would you like to rent?<br>
-
+                    <p class= "label">Which room would you like to rent?</p>
                     <!-- TODO: add iamges -->
-                    <input type="radio" name="room" value="library" checked>Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
-                    <input type="radio" name="room" value="fuller">Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
+                    <input type="radio" name="room" value="library" checked> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
+                    <input type="radio" name="room" value="fuller"> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
 
                     <!-- Table and Chair -->
-                    Optional - Table and Chair Rental for Fuller Room, Additional Flat Fee $25
-                    <input type="radio" name="table-chair-rental" value="yes">Yes<br>
-                    <input type="radio" name="table-chair-rental" value="no">No<br>
+                    <p class= "label">Optional - Table and Chair Rental for Fuller Room, Additional Flat Fee $25</p>
+                    <input type="radio" name="table-chair-rental" value="yes"> Yes<br>
+                    <input type="radio" name="table-chair-rental" value="no"> No<br>
 
                     <!-- Number of table and chairs  -->
-                    If yes, please list number of chairs, round tables, and/or rectangular tables you would like for your event.<br>
+                    <p class= "label">If yes, please list number of chairs, round tables, and/or rectangular tables you would like for your event</p>
                     <input type="text" name="num-chair-table"><br>
 
                     <!-- Description  -->
-                    Description of event<br>
+                    <p class= "label">Description of event</p>
                     <input type="text" name="description"><br>
 
                     <!-- Number of people attending -->
-                    Estimated number of people attending
-                    <input type="radio" name="num-people" value="under-10">Under 10 People<br>
-                    <input type="radio" name="num-people" value="20-30">20 to 30 People<br>
-                    <input type="radio" name="num-people" value="30-50">30 to 50 People (Fuller Room Only)<br>
+                    <p class= "label">Estimated number of people attending</p>
+                    <input type="radio" name="num-people" value="under-10"> Under 10 People<br>
+                    <input type="radio" name="num-people" value="20-30"> 20 to 30 People<br>
+                    <input type="radio" name="num-people" value="30-50"> 30 to 50 People (Fuller Room Only)<br>
 
                     <!-- Email -->
-                    Organization (if applicable)<br>
+                    <p class= "label">Organization (if applicable)</p>
                     <input type="text" name="organization"><br>
 
                     <!-- Mailing Address -->
-                    Mailing address<br>
+                    <p class= "label">Mailing address</p>
                     <input type="text" name="mailing-address"><br>
 
                     <!-- Name -->
-                    Contact's First and Last Name<br>
+                    <p class= "label">Contact's First and Last Name</p>
                     <input type="text" name="contact-name"><br>
 
                     <!-- Phone Number -->
-                    Contact's Phone Number<br>
+                    <p class= "label">Contact's Phone Number</p>
                     <input type="text" name="contact-phone"><br>
 
                     <!-- Terms of Service -->
-                    Please check the box below:<br>
+                    <p class= "label">Please check the box below:</p>
                     <input type="checkbox" name="vehicle1" value="Bike"> I agree to the Terms & Conditions.<br>  <!--TODO: link ToS-->
 
                     <!-- Signature -->
-                    Form completed by <br>
+                    <p class= "label">Form completed by</p>
                     <input type="text" name="signature"><br>
                 </div>
             </div>
