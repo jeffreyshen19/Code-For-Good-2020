@@ -28,57 +28,57 @@
                 </div>
                 <div id = "form" class = "right">
                     <!-- Email -->
-                    <p class= "label">Email address</p>
-                    <input type="text" name="email"><br>
+                    <p class = "label required">Email address</p>
+                    <input type="text" name="email" required><br>
 
                     <!-- Room -->
-                    <p class= "label">Which room would you like to rent?</p>
+                    <p class= "label required">Which room would you like to rent?</p>
                     <!-- TODO: add iamges -->
-                    <input type="radio" name="room" value="library" checked> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
-                    <input type="radio" name="room" value="fuller"> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
+                    <input type="radio" name="room" value="library" checked required> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
+                    <input type="radio" name="room" value="fuller" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
 
                     <!-- Table and Chair -->
-                    <p class= "label">Optional - Table and Chair Rental for Fuller Room, Additional Flat Fee $25</p>
-                    <input type="radio" name="table-chair-rental" value="yes"> Yes<br>
-                    <input type="radio" name="table-chair-rental" value="no"> No<br>
+                    <p class= "label required">Optional - Table and Chair Rental for Fuller Room, Additional Flat Fee $25</p>
+                    <input type="radio" name="table-chair-rental" value="yes" required> Yes<br>
+                    <input type="radio" name="table-chair-rental" value="no" required> No<br>
 
                     <!-- Number of table and chairs  -->
                     <p class= "label">If yes, please list number of chairs, round tables, and/or rectangular tables you would like for your event</p>
                     <input type="text" name="num-chair-table"><br>
 
                     <!-- Description  -->
-                    <p class= "label">Description of event</p>
-                    <input type="text" name="description"><br>
+                    <p class= "label required">Description of event</p>
+                    <input type="text" name="description" required><br>
 
                     <!-- Number of people attending -->
-                    <p class= "label">Estimated number of people attending</p>
-                    <input type="radio" name="num-people" value="under-10"> Under 10 People<br>
-                    <input type="radio" name="num-people" value="20-30"> 20 to 30 People<br>
-                    <input type="radio" name="num-people" value="30-50"> 30 to 50 People (Fuller Room Only)<br>
+                    <p class= "label required">Estimated number of people attending</p>
+                    <input type="radio" name="num-people" value="under-10" required> Under 10 People<br>
+                    <input type="radio" name="num-people" value="20-30" required> 20 to 30 People<br>
+                    <input type="radio" name="num-people" value="30-50" required> 30 to 50 People (Fuller Room Only)<br>
 
                     <!-- Email -->
                     <p class= "label">Organization (if applicable)</p>
                     <input type="text" name="organization"><br>
 
                     <!-- Mailing Address -->
-                    <p class= "label">Mailing address</p>
-                    <input type="text" name="mailing-address"><br>
+                    <p class= "label required">Mailing address</p>
+                    <input type="text" name="mailing-address" required><br>
 
                     <!-- Name -->
-                    <p class= "label">Contact's First and Last Name</p>
-                    <input type="text" name="contact-name"><br>
+                    <p class= "label required">Contact's First and Last Name</p>
+                    <input type="text" name="contact-name" required><br>
 
                     <!-- Phone Number -->
-                    <p class= "label">Contact's Phone Number</p>
-                    <input type="text" name="contact-phone"><br>
+                    <p class= "label required">Contact's Phone Number</p>
+                    <input type="text" name="contact-phone" required><br>
 
                     <!-- Terms of Service -->
-                    <p class= "label">Please check the box below:</p>
-                    <input type="checkbox" name="vehicle1" value="Bike"> I agree to the Terms & Conditions.<br>  <!--TODO: link ToS-->
+                    <p class= "label required">Please check the box below:</p>
+                    <input type="checkbox" name="verification" value="true" required> I agree to the Terms & Conditions.<br>  <!--TODO: link ToS-->
 
                     <!-- Signature -->
-                    <p class= "label">Form completed by</p>
-                    <input type="text" name="signature"><br>
+                    <p class= "label required">Form completed by</p>
+                    <input type="text" name="signature" required><br>
                 </div>
             </div>
         </form>

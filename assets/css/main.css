@@ -29,6 +29,11 @@ body{
     margin: 15px 0 0;
 }
 
+#calendar-container #form.right .label.required:after{
+    content: " *";
+    color: #c0392b;
+}
+
 #calendar-container #form.right input[type = "text"]{
     width: 100%;
     padding: 8px 10px;
