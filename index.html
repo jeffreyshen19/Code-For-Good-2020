@@ -36,18 +36,18 @@
                     <!-- Room -->
                     <p class= "label required">Which room would you like to rent?</p>
                     <!-- TODO: add iamges -->
-                    <input type="radio" name="room" value="library" checked required onchange = "changeCalendar(this)"> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
-                    <input type="radio" name="room" value="fuller" onchange = "changeCalendar(this)" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
+                    <input type="radio" name="room" value="library" checked required onclick="validateRooms()" onchange="changeCalendar(this)"> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
+                    <input type="radio" name="room" value="fuller" onclick="validateRooms()" onchange="changeCalendar(this)" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
 
                     <!-- Table and Chair -->
                     <p class= "label required">Optional - Table and Chair Rental for Fuller Room, Additional Flat Fee $25</p>
-                    <input type="radio" name="table-chair-rental" value="yes" onchange="validateTableChairs()" required> Yes<br>
-                    <input type="radio" name="table-chair-rental" value="no" onchange="validateTableChairs()" required> No<br>
+                    <input type="radio" name="table-chair-rental" value="yes" onclick="validateTableChairs()" required> Yes<br>
+                    <input type="radio" name="table-chair-rental" value="no" onclick="validateTableChairs()" required> No<br>
 
                     <!-- Number of table and chairs  -->
                     <div id="div-num-table-chair">
                         <p class= "label">Please list number of chairs, round tables, and/or rectangular tables you would like for your event</p>
-                        <input type="text" name="num-table-chair" onclick="validateNumTableChairs()"><br>
+                        <input type="text" name="num-table-chair" onchange="validateNumTableChairs()" onclick="validateNumTableChairs()"><br>
 
                         <p class="gone" id="wrong-num-table-chair">Please list the number of chairs and tables you would like for your event.</p>
                     </div>
@@ -58,11 +58,11 @@
 
                     <!-- Number of people attending -->
                     <p class= "label required">Estimated number of people attending</p>
-                    <input type="radio" name="num-people" value="under-10" required> Under 10 People<br>
-                    <input type="radio" name="num-people" value="20-30" required> 20 to 30 People<br>
-                    <input type="radio" name="num-people" value="30-50" required> 30 to 50 People (Fuller Room Only)<br>
+                    <input type="radio" name="num-people" value="under-10" onclick="validateRooms()" required> Under 10 People<br>
+                    <input type="radio" name="num-people" value="20-30" onclick="validateRooms()" required> 20 to 30 People<br>
+                    <input type="radio" name="num-people" value="30-50" onclick="validateRooms()" required> 30 to 50 People (Fuller Room Only)<br>
 
-                    <p class="gone" id="wrong-num-people">If there are 30 to 50 people attending your event, you may only rent the Fuller Room.</p>
+                    <p class="gone" id="wrong-room">If there are 30 to 50 people attending your event, you may only rent the Fuller Room.</p>
 
                     <!-- Email -->
                     <p class= "label">Organization (if applicable)</p>
