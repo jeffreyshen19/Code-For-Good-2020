@@ -4,7 +4,8 @@ const LIBRARY = 0,
       FULLER = 1,
       roomNames = ["library", "fuller"];
 
-let roomSelected = LIBRARY;
+let roomSelected = LIBRARY,
+    events = [];
 
 function generateCalendar(){
     // Store availability for both the library and fuller room
@@ -64,13 +65,33 @@ function generateCalendar(){
     calendar.render();
 
     // Grab existing events and put them on calendar
+    events.forEach(function(d){
+        if(d.room == roomNames[roomSelected]){
+            calendar.addEvent({
+                title: d.approved == "TRUE" ? "Already Booked" : "Pending Booking Request",
+                start: d.date + "T" + d.start_time.trim(),
+                end: d.date + "T" + d.end_time.trim(),
+                className: d.approved == "TRUE" ? "booked" : "pending"
+            })
+        }
+    });
+}
+
+function changeCalendar(e){
+    roomSelected = roomNames.indexOf(e.value);
+    $("#calendar").empty();
+    generateCalendar();
+}
+
+$(document).ready(function() {
+    //Grab data
     $.ajax({
         type: "GET",
         url: "https://spreadsheets.google.com/feeds/cells/1aRHFRnlOkbo58w0KxJwqJhazj1nEr8FxzcCyl9hdgg4/1/public/values?alt=json-in-script",
         dataType: "text",
         success: function(data){
             data = JSON.parse(data.replace("gdata.io.handleScriptLoaded(", "").replace(");", "")).feed.entry;
-            var table = [], headers = [];
+            var headers = [];
 
             // Parse data into a JSON object
             for(var r = 0; r < data.length; r++){
@@ -81,32 +102,13 @@ function generateCalendar(){
 
                 if(row == 0) headers.push(val);
                 else{
-                    if(col == 0) table.push({}) // New row
-                    table[row - 1][headers[col]] = val;
+                    if(col == 0) events.push({}) // New row
+                    events[row - 1][headers[col]] = val;
                 }
             }
 
-            // Add to calendar
-            table.forEach(function(d){
-                if(d.room == roomNames[roomSelected]){
-                    calendar.addEvent({
-                        title: d.approved == "TRUE" ? "Already Booked" : "Pending Booking Request",
-                        start: d.date + "T" + d.start_time.trim(),
-                        end: d.date + "T" + d.end_time.trim(),
-                        className: d.approved == "TRUE" ? "booked" : "pending"
-                    })
-                }
-            });
+            generateCalendar();
+
         }
      });
-}
-
-function changeCalendar(e){
-    roomSelected = roomNames.indexOf(e.value);
-    $("#calendar").empty();
-    generateCalendar();
-}
-
-$(document).ready(function() {
-    generateCalendar();
 })
