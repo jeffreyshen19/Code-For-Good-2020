@@ -9,6 +9,7 @@
     <link href = './includes/fullcalendar/packages/timegrid/main.min.css' rel = 'stylesheet' type = "text/css"/>
     <script src = './includes/fullcalendar/packages/core/main.js'></script>
     <script src = './includes/fullcalendar/packages/daygrid/main.js'></script>
+    <script src = './includes/fullcalendar/packages/interaction/main.js'></script>
     <script src = './includes/fullcalendar/packages/timegrid/main.js'></script>
 
     <!-- Import Jquery -->
@@ -34,8 +35,8 @@
                     <!-- Room -->
                     <p class= "label required">Which room would you like to rent?</p>
                     <!-- TODO: add iamges -->
-                    <input type="radio" name="room" value="library" checked required> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
-                    <input type="radio" name="room" value="fuller" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
+                    <input type="radio" name="room" value="library" checked required onchange = "changeCalendar(this)"> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
+                    <input type="radio" name="room" value="fuller" required onchange = "changeCalendar(this)"> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
 
                     <!-- Table and Chair -->
                     <p class= "label required">Optional - Table and Chair Rental for Fuller Room, Additional Flat Fee $25</p>

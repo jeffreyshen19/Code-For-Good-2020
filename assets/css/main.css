@@ -47,3 +47,19 @@ body{
     margin-top: 2px;
     font-size: 12px;
 }
+
+.booked, .pending{
+    background: #24252a;
+    border-color: #24252a;
+    padding: 5px;
+}
+
+.pending{
+    background: repeating-linear-gradient(
+      45deg,
+      #24252a,
+      #24252a 10px,
+      #424659 10px,
+      #424659 20px
+    );
+}
