@@ -101,6 +101,12 @@ function generateCalendar(){
      });
 }
 
+function changeCalendar(e){
+    roomSelected = roomNames.indexOf(e.value);
+    $("#calendar").empty();
+    generateCalendar();
+}
+
 $(document).ready(function() {
     generateCalendar();
 })
