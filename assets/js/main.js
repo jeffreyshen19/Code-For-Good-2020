@@ -89,12 +89,11 @@ function generateCalendar(){
             // Add to calendar
             table.forEach(function(d){
                 if(d.room == roomNames[roomSelected]){
-                    console.log(d.approved);
                     calendar.addEvent({
-                        title: "Already Booked",
+                        title: d.approved == "TRUE" ? "Already Booked" : "Pending Booking Request",
                         start: d.date + "T" + d.start_time.trim(),
                         end: d.date + "T" + d.end_time.trim(),
-                        className: "booked"
+                        className: d.approved == "TRUE" ? "booked" : "pending"
                     })
                 }
             });
