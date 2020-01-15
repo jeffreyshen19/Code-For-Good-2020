@@ -63,3 +63,13 @@ body{
       #424659 20px
     );
 }
+
+.gone{
+    text-align: center;
+    color: red;
+    display: none;
+}
+
+#div-num-table-chair{
+    display: none;
+}

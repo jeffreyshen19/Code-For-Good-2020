@@ -30,22 +30,27 @@
                 <div id = "form" class = "right">
                     <!-- Email -->
                     <p class = "label required">Email address</p>
-                    <input type="text" name="email" required><br>
+                    <input type="text" name="email" onchange="validateEmail()" required><br>
+                    <p class="gone" id="wrong-email">Please enter a valid email address.</p>
 
                     <!-- Room -->
                     <p class= "label required">Which room would you like to rent?</p>
                     <!-- TODO: add iamges -->
                     <input type="radio" name="room" value="library" checked required onchange = "changeCalendar(this)"> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
-                    <input type="radio" name="room" value="fuller" required onchange = "changeCalendar(this)"> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
+                    <input type="radio" name="room" value="fuller" onchange = "changeCalendar(this)" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
 
                     <!-- Table and Chair -->
                     <p class= "label required">Optional - Table and Chair Rental for Fuller Room, Additional Flat Fee $25</p>
-                    <input type="radio" name="table-chair-rental" value="yes" required> Yes<br>
-                    <input type="radio" name="table-chair-rental" value="no" required> No<br>
+                    <input type="radio" name="table-chair-rental" value="yes" onchange="validateTableChairs()" required> Yes<br>
+                    <input type="radio" name="table-chair-rental" value="no" onchange="validateTableChairs()" required> No<br>
 
                     <!-- Number of table and chairs  -->
-                    <p class= "label">If yes, please list number of chairs, round tables, and/or rectangular tables you would like for your event</p>
-                    <input type="text" name="num-chair-table"><br>
+                    <div id="div-num-table-chair">
+                        <p class= "label">Please list number of chairs, round tables, and/or rectangular tables you would like for your event</p>
+                        <input type="text" name="num-table-chair" onclick="validateNumTableChairs()"><br>
+
+                        <p class="gone" id="wrong-num-table-chair">Please list the number of chairs and tables you would like for your event.</p>
+                    </div>
 
                     <!-- Description  -->
                     <p class= "label required">Description of event</p>
@@ -57,6 +62,8 @@
                     <input type="radio" name="num-people" value="20-30" required> 20 to 30 People<br>
                     <input type="radio" name="num-people" value="30-50" required> 30 to 50 People (Fuller Room Only)<br>
 
+                    <p class="gone" id="wrong-num-people">If there are 30 to 50 people attending your event, you may only rent the Fuller Room.</p>
+
                     <!-- Email -->
                     <p class= "label">Organization (if applicable)</p>
                     <input type="text" name="organization"><br>
@@ -67,11 +74,13 @@
 
                     <!-- Name -->
                     <p class= "label required">Contact's First and Last Name</p>
-                    <input type="text" name="contact-name" required><br>
+                    <input type="text" name="contact-name" onchange="validateName()" required><br>
+                    <p class="gone" id="wrong-contact-name">Please enter a valid first and last name.</p>
 
                     <!-- Phone Number -->
                     <p class= "label required">Contact's Phone Number</p>
-                    <input type="text" name="contact-phone" required><br>
+                    <input type="text" name="contact-phone" onchange="validatePhone()" required><br>
+                    <p class="gone" id="wrong-contact-phone">Please enter a valid phone number.</p>
 
                     <!-- Terms of Service -->
                     <p class= "label required">Please check the box below:</p>
