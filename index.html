@@ -20,7 +20,7 @@
 </head>
 <body>
     <div id = "wrapper">
-        <form>
+        <form action = "" method = "POST">
             <div class = "section">
             </div>
             <div class = "section" id = "calendar-container">
@@ -74,15 +74,17 @@
 
                     <!-- Terms of Service -->
                     <p class= "label required">Please check the box below:</p>
-                    <input type="checkbox" name="verification" value="true" required> I agree to the Terms & Conditions.<br>  <!--TODO: link ToS-->
+                    <input type="checkbox" name="verification" value="I agree to the Terms & Conditions." required>I agree to the Terms & Conditions.<br>  <!--TODO: link ToS-->
 
                     <!-- Signature -->
                     <p class= "label required">Form completed by</p>
                     <input type="text" name="signature" required><br>
                 </div>
             </div>
+            <button type="submit">Submit</button>
         </form>
     </div>
     <script src = "./assets/js/main.js"></script>
+    <script src = "./assets/js/form.js"></script>
 </body>
 </html>
