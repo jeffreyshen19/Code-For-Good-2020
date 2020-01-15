@@ -42,10 +42,35 @@ function generateCalendar(){
         ]
     ];
 
-    console.log(availability[roomSelected]);
+    // Grab existing events and put them on calendar
+    let events = [];
+    $.ajax({
+        type: "GET",
+        url: "https://spreadsheets.google.com/feeds/cells/1aRHFRnlOkbo58w0KxJwqJhazj1nEr8FxzcCyl9hdgg4/1/public/values?alt=json-in-script",
+        dataType: "text",
+        success: function(data){
+            data = JSON.parse(data.replace("gdata.io.handleScriptLoaded(", "").replace(");", "")).feed.entry;
+            var table = [], headers = [];
 
+            for(var r = 0; r < data.length; r++){
+                var cell = data[r]["gs$cell"],
+                    row = cell.row - 1,
+                    col = cell.col - 1;
+                var val = cell["$t"];
+
+                if(row == 0) headers.push(val);
+                else{
+                    if(col == 0) table.push({}) // New row
+                    table[row - 1][headers[col]] = val;
+                }
+            }
+            console.log(table);
+        }
+     });
+
+    // Create calendar
     var calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
-        plugins: ['timeGrid'],
+        plugins: ['timeGrid', 'interaction'],
         defaultView: 'timeGridWeek',
         themeSystem: 'standard',
         minTime: "08:00",
@@ -53,7 +78,12 @@ function generateCalendar(){
         timeZone: 'America/New_York',
         height: "parent",
         allDaySlot: false,
+        selectable: true,
+        selectMirror: true,
+        selectConstraint: "businessHours",
+        selectOverlap: false,
         nowIndicator: true, //Show current time
+        events: events,
         businessHours: availability[roomSelected] //get availability, based on the room selected;
     });
 
