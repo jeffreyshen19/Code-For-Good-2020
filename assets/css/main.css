@@ -48,6 +48,18 @@ body{
     font-size: 12px;
 }
 
+#calendar-container #form.right button{
+    background: #2C3E50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .booked, .pending{
     background: #24252a;
     border-color: #24252a;
