@@ -36,8 +36,8 @@
                     <!-- Room -->
                     <p class= "label required">Which room would you like to rent?</p>
                     <!-- TODO: add iamges -->
-                    <input type="radio" name="room" value="library" checked required onclick="validateRooms()" onchange="changeCalendar(this)"> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
-                    <input type="radio" name="room" value="fuller" onclick="validateRooms()" onchange="changeCalendar(this)" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
+                    <input type="radio" name="room" value="Library" checked required onclick="validateRooms()" onchange="changeCalendar(this)"> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
+                    <input type="radio" name="room" value="Fuller Room" onclick="validateRooms()" onchange="changeCalendar(this)" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
 
                     <!-- Date -->
                     <p class = "label required">Date and time of rental request</p>
@@ -100,6 +100,13 @@
                 </div>
             </div>
         </form>
+    </div>
+
+    <div id="submitPage">
+        <p>Thank you for submitting a booking request for the <span id="roomInfo"></span>:</p>
+        <span id="datesInfo"></span>
+        <p>A YWCA Cambridge staff member will follow-up within 3-5 business days.</p>
+        <p id="refreshPage" onclick="submitNewRequest()">Submit another rental request.</p>
     </div>
     <script src = "./assets/js/main.js"></script>
     <script src = "./assets/js/form.js"></script>

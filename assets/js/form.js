@@ -118,6 +118,11 @@ function validatePhone(){
   return validPhone;
 }
 
+function submitNewRequest(){
+  $("#submitPage").hide();
+  $("#wrapper").show();
+}
+
 // form
 $form.on('submit',function(e){
   e.preventDefault();
@@ -130,4 +135,13 @@ $form.on('submit',function(e){
     dataType: "json",
     data: $form.serializeObject()
   })
+
+  var object = $form.serializeObject();
+  $("#roomInfo").html(object.room);
+  console.log(object.dates);
+  console.log(object);
+  $("#datesInfo").html(object.dates);
+
+  $("#wrapper").hide();
+  $("#submitPage").show();
 })

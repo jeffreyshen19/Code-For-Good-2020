@@ -1,6 +1,8 @@
 body{
     font-family: "IBM Plex Sans";
     margin: 0;
+    height: 100vh;
+    width: 100%;
 }
 
 #calendar-container{
@@ -92,4 +94,23 @@ body{
 
 #div-num-table-chair{
     display: none;
+}
+
+#submitPage{
+    display: none;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+}
+
+#submitPage p{
+    text-align: center;
+}
+
+#refreshPage{
+    text-decoration: underline;
+}
+    
+#refreshPage:hover{
+    color:gray;
 }
