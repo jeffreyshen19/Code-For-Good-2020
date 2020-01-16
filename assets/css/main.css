@@ -48,6 +48,14 @@ body{
     font-size: 12px;
 }
 
+#calendar-container #form.right #date-input{
+    margin-top: 5px;
+}
+
+#calendar-container #form.right #date-input:focus{
+    outline: none;
+}
+
 #calendar-container #form.right button{
     background: #2C3E50;
     border: none;
