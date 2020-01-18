@@ -11,8 +11,10 @@ function handleSelection(selectionInfo){
     //Clear all previous tooltips
     $(".tooltip").remove();
 
+    let left = selectionInfo.start.getDay() < 4;
+
     //Add new tooltip and position
-    let tooltip = `<div class = 'tooltip'>
+    let tooltip = `<div class = 'tooltip tooltip-${left ? "left" : "right"}'>
         <p>Book this time slot?</p>
         <button>Yes</button><button class = 'light'>No</button>
     </div>`;
@@ -21,12 +23,8 @@ function handleSelection(selectionInfo){
     let h1 = $("a.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror").outerHeight(),
         h2 = $(".tooltip").outerHeight();
 
-    console.log(h1);
-    console.log(h2);
-
-    $(".tooltip").css({
-        top: (h1 - h2) / 2 + "px",
-    })
+    $(".tooltip").css("top", (h1 - h2) / 2 + "px");
+    $(".tooltip").css((left ? "left" : "right"), "calc((100% + 8px))");
     // $(selectionInfo.jsEvent.toElement).append("")
     // let date = `${selectionInfo.start.getFullYear()}-${('0' + (selectionInfo.start.getMonth() + 1)).slice(-2)}-${('0' + selectionInfo.start.getDate()).slice(-2)}`;
     // let startTime = selectionInfo.startStr.split("T")[1];

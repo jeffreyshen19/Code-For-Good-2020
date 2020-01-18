@@ -129,17 +129,16 @@ button.light{
 .tooltip {
 	position: absolute;
     top: 0;
-    left: calc(100% + 8px);
 	background: #e4e9ed;
     z-index: 100;
     width: 150px;
     padding: 10px;
     border-radius: 5px;
     color: black;
+    border: 1px solid rgb(191, 191, 191);
 }
 
-.tooltip:after {
-	right: 100%;
+.tooltip:after, .tooltip:before {
 	top: 50%;
 	border: solid transparent;
 	content: " ";
@@ -147,10 +146,44 @@ button.light{
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-color: rgba(255, 255, 255, );
-	border-right-color: #e4e9ed;
+}
+
+.tooltip:after {
+	border-color: rgba(136, 183, 213, 0);
 	border-width: 5px;
 	margin-top: -5px;
+}
+
+.tooltip:before {
+	border-color: rgba(245, 239, 223, 0);
+	border-width: 7px;
+	margin-top: -7px;
+}
+
+/* Left tooltip */
+.tooltip-left:after, .tooltip-left:before {
+	right: 100%;
+}
+
+.tooltip-left:after {
+	border-right-color: #e4e9ed;
+}
+
+.tooltip-left:before {
+	border-right-color: rgb(191, 191, 191);
+}
+
+/* Right tooltip */
+.tooltip-right:after, .tooltip-right:before {
+	left: 100%;
+}
+
+.tooltip-right:after {
+	border-left-color: #e4e9ed;
+}
+
+.tooltip-right:before {
+	border-left-color: rgb(191, 191, 191);
 }
 
 .tooltip p{
