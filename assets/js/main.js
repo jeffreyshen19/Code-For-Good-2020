@@ -6,7 +6,8 @@ const LIBRARY = 0,
 
 let roomSelected = LIBRARY,
     events = [],
-    currentSelection;
+    currentSelection,
+    calendar;
 
 function handleSelection(selectionInfo){
     currentSelection = selectionInfo;
@@ -43,7 +44,9 @@ function confirmSelection(){
 }
 
 function cancelSelection(){
-    console.log("canceled");
+    $(".tooltip").remove();
+    calendar.unselect();
+    currentSelection = null;
 }
 
 function generateCalendar(){
@@ -84,7 +87,7 @@ function generateCalendar(){
     ];
 
     // Create calendar
-    var calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
+    calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
         plugins: ['timeGrid', 'interaction'],
         defaultView: 'timeGridWeek',
         themeSystem: 'standard',
