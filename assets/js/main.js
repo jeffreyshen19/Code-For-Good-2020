@@ -7,7 +7,8 @@ const LIBRARY = 0,
 let roomSelected = LIBRARY,
     events = [],
     currentSelection,
-    calendar;
+    calendar,
+    allSelections = [];
 
 function handleSelection(selectionInfo){
     currentSelection = selectionInfo;
@@ -30,17 +31,28 @@ function handleSelection(selectionInfo){
 
     $(".tooltip").css("top", (h0 + (h1 - h2) / 2) + "px");
     $(".tooltip").css((left ? "left" : "right"), "calc((100% + 8px))");
-    // $(selectionInfo.jsEvent.toElement).append("")
-    // let date = `${selectionInfo.start.getFullYear()}-${('0' + (selectionInfo.start.getMonth() + 1)).slice(-2)}-${('0' + selectionInfo.start.getDate()).slice(-2)}`;
-    // let startTime = selectionInfo.startStr.split("T")[1];
-    // let endTime = selectionInfo.endStr.split("T")[1];
-    // $('#date-input').prop('readonly',false);
-    // $('#date-input').val(`${date} ${startTime}-${endTime}`);
-    // $('#date-input').prop('readonly',true);
+
 }
 
 function confirmSelection(){
-    console.log("confirmed");
+    let date = `${currentSelection.start.getFullYear()}-${('0' + (currentSelection.start.getMonth() + 1)).slice(-2)}-${('0' + currentSelection.start.getDate()).slice(-2)}`;
+    let startTime = currentSelection.startStr.split("T")[1];
+    let endTime = currentSelection.endStr.split("T")[1];
+    allSelections.push(`${date} ${startTime}-${endTime}`);
+
+    $('#date-input').prop('readonly',false);
+    $('#date-input').val(allSelections.join(", "));
+    $('#date-input').prop('readonly',true);
+
+    $(".tooltip").remove();
+    calendar.unselect();
+    calendar.addEvent({
+        title: "Your Booking Request",
+        start: currentSelection.start,
+        end: currentSelection.end,
+        className: "event-selected"
+    })
+    currentSelection = null;
 }
 
 function cancelSelection(){

@@ -207,3 +207,8 @@ button, .button{
     padding: 5px;
     background: #4b77be;
 }
+
+.event-selected{
+    padding: 5px;
+    background: #3a539b;
+}
