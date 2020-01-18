@@ -8,12 +8,14 @@ let roomSelected = LIBRARY,
     events = [];
 
 function handleSelection(selectionInfo){
-    let date = `${selectionInfo.start.getFullYear()}-${('0' + (selectionInfo.start.getMonth() + 1)).slice(-2)}-${('0' + selectionInfo.start.getDate()).slice(-2)}`;
-    let startTime = selectionInfo.startStr.split("T")[1];
-    let endTime = selectionInfo.endStr.split("T")[1];
-    $('#date-input').prop('readonly',false);
-    $('#date-input').val(`${date} ${startTime}-${endTime}`);
-    $('#date-input').prop('readonly',true);
+    console.log(selectionInfo.jsEvent.target);
+    // $(selectionInfo.jsEvent.toElement).append("")
+    // let date = `${selectionInfo.start.getFullYear()}-${('0' + (selectionInfo.start.getMonth() + 1)).slice(-2)}-${('0' + selectionInfo.start.getDate()).slice(-2)}`;
+    // let startTime = selectionInfo.startStr.split("T")[1];
+    // let endTime = selectionInfo.endStr.split("T")[1];
+    // $('#date-input').prop('readonly',false);
+    // $('#date-input').val(`${date} ${startTime}-${endTime}`);
+    // $('#date-input').prop('readonly',true);
 }
 
 function generateCalendar(){

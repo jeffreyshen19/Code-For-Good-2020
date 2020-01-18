@@ -26,6 +26,10 @@
             </div>
             <div class = "section" id = "calendar-container">
                 <div id = "calendar" class = "left">
+                    <div class = 'tooltip'>
+                        <p>Book this time slot?</p>
+                        <button>Yes</button><button class = 'light'>No</button>
+                    </div>
                 </div>
                 <div id = "form" class = "right">
                     <!-- Email -->
@@ -40,9 +44,9 @@
                     <input type="radio" name="room" value="Fuller Room" onclick="validateRooms()" onchange="changeCalendar(this)" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
 
                     <!-- Date -->
-                    <p class = "label required">Date and time of rental request</p>
-                    <i>All times in EST.</i>
-                    <input id = "date-input" type="text" name="dates" required readonly="readonly" placeholder = "Select date and time of event using the calendar"><br>
+                    <p class = "label required">Date(s) and time(s) of rental request</p>
+                    <i>Select dates and times using the calendar (All times in EST).</i>
+                    <input id = "date-input" type="text" name="dates" required readonly="readonly"><br>
 
                     <!-- Table and Chair -->
                     <p class= "label required">Optional - Table and Chair Rental for Fuller Room, Additional Flat Fee $25</p>
