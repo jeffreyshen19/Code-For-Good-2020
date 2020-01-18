@@ -89,6 +89,7 @@ button.light{
 /* Selection */
 .fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror{
     padding: 5px;
+    background: #4b77be;
 }
 
 .pending{
@@ -130,6 +131,7 @@ button.light{
     color:gray;
 }
 
+/* Tooltip */
 .tooltip {
 	position: absolute;
     top: 200px;
