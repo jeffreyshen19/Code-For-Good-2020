@@ -86,12 +86,6 @@ button.light{
     padding: 5px;
 }
 
-/* Selection */
-.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror{
-    padding: 5px;
-    background: #4b77be;
-}
-
 .pending{
     background: repeating-linear-gradient(
       45deg,
@@ -134,13 +128,14 @@ button.light{
 /* Tooltip */
 .tooltip {
 	position: absolute;
-    top: 200px;
-    left: 200px;
+    top: 0;
+    left: calc(100% + 8px);
 	background: #e4e9ed;
     z-index: 100;
     width: 150px;
     padding: 10px;
     border-radius: 5px;
+    color: black;
 }
 
 .tooltip:after {
@@ -152,10 +147,10 @@ button.light{
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-color: rgba(255, 255, 255, 0.5);
+	border-color: rgba(255, 255, 255, );
 	border-right-color: #e4e9ed;
-	border-width: 10px;
-	margin-top: -10px;
+	border-width: 5px;
+	margin-top: -5px;
 }
 
 .tooltip p{
@@ -164,8 +159,15 @@ button.light{
 
 .tooltip button{
     width: calc((100% - 5px) / 2);
+    box-sizing: border-box;
 }
 
 .tooltip button:first-of-type{
     margin-right: 5px;
+}
+
+/* Selection */
+.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror{
+    padding: 5px;
+    background: #4b77be;
 }

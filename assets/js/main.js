@@ -8,7 +8,25 @@ let roomSelected = LIBRARY,
     events = [];
 
 function handleSelection(selectionInfo){
-    console.log(selectionInfo.jsEvent.target);
+    //Clear all previous tooltips
+    $(".tooltip").remove();
+
+    //Add new tooltip and position
+    let tooltip = `<div class = 'tooltip'>
+        <p>Book this time slot?</p>
+        <button>Yes</button><button class = 'light'>No</button>
+    </div>`;
+
+    $("a.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror").append(tooltip);
+    let h1 = $("a.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror").outerHeight(),
+        h2 = $(".tooltip").outerHeight();
+
+    console.log(h1);
+    console.log(h2);
+
+    $(".tooltip").css({
+        top: (h1 - h2) / 2 + "px",
+    })
     // $(selectionInfo.jsEvent.toElement).append("")
     // let date = `${selectionInfo.start.getFullYear()}-${('0' + (selectionInfo.start.getMonth() + 1)).slice(-2)}-${('0' + selectionInfo.start.getDate()).slice(-2)}`;
     // let startTime = selectionInfo.startStr.split("T")[1];
