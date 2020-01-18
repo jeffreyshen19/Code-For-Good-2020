@@ -58,7 +58,7 @@ body{
     outline: none;
 }
 
-button{
+button, .button{
     background: #2C3E50;
     border: none;
     border-radius: 5px;
@@ -69,7 +69,7 @@ button{
     padding: 8px 10px;
 }
 
-button.light{
+.button.light{
     color: #2C3E50;
     background: white;
 }
@@ -191,12 +191,14 @@ button.light{
     margin: 0 0 5px 0;
 }
 
-.tooltip button{
+.tooltip .button{
     width: calc((100% - 5px) / 2);
     box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
 }
 
-.tooltip button:first-of-type{
+.tooltip .button:first-of-type{
     margin-right: 5px;
 }
 

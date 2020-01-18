@@ -5,9 +5,12 @@ const LIBRARY = 0,
       roomNames = ["library", "fuller"];
 
 let roomSelected = LIBRARY,
-    events = [];
+    events = [],
+    currentSelection;
 
 function handleSelection(selectionInfo){
+    currentSelection = selectionInfo;
+
     //Clear all previous tooltips
     $(".tooltip").remove();
 
@@ -16,14 +19,15 @@ function handleSelection(selectionInfo){
     //Add new tooltip and position
     let tooltip = `<div class = 'tooltip tooltip-${left ? "left" : "right"}'>
         <p>Book this time slot?</p>
-        <button>Yes</button><button class = 'light'>No</button>
+        <span onclick = 'confirmSelection()' class = 'button'>Yes</span><span class = 'button light' onclick = 'cancelSelection()'>No</span>
     </div>`;
 
-    $("a.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror").append(tooltip);
-    let h1 = $("a.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror").outerHeight(),
+    $("a.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror").parent().append(tooltip);
+    let h0 = $("a.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror").position().top,
+        h1 = $("a.fc-time-grid-event.fc-event.fc-start.fc-end.fc-mirror").outerHeight(),
         h2 = $(".tooltip").outerHeight();
 
-    $(".tooltip").css("top", (h1 - h2) / 2 + "px");
+    $(".tooltip").css("top", (h0 + (h1 - h2) / 2) + "px");
     $(".tooltip").css((left ? "left" : "right"), "calc((100% + 8px))");
     // $(selectionInfo.jsEvent.toElement).append("")
     // let date = `${selectionInfo.start.getFullYear()}-${('0' + (selectionInfo.start.getMonth() + 1)).slice(-2)}-${('0' + selectionInfo.start.getDate()).slice(-2)}`;
@@ -32,6 +36,14 @@ function handleSelection(selectionInfo){
     // $('#date-input').prop('readonly',false);
     // $('#date-input').val(`${date} ${startTime}-${endTime}`);
     // $('#date-input').prop('readonly',true);
+}
+
+function confirmSelection(){
+    console.log("confirmed");
+}
+
+function cancelSelection(){
+    console.log("canceled");
 }
 
 function generateCalendar(){
