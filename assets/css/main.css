@@ -135,7 +135,8 @@ button.light{
     padding: 10px;
     border-radius: 5px;
     color: black;
-    border: 1px solid rgb(191, 191, 191);
+    border: 1px solid #d7d7d7;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.19)
 }
 
 .tooltip:after, .tooltip:before {
@@ -170,7 +171,7 @@ button.light{
 }
 
 .tooltip-left:before {
-	border-right-color: rgb(191, 191, 191);
+	border-right-color: #d7d7d7;
 }
 
 /* Right tooltip */
@@ -183,7 +184,7 @@ button.light{
 }
 
 .tooltip-right:before {
-	border-left-color: rgb(191, 191, 191);
+	border-left-color: #d7d7d7;
 }
 
 .tooltip p{
