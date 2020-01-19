@@ -138,9 +138,9 @@ $form.on('submit',function(e){
 
   var object = $form.serializeObject();
   $("#roomInfo").html(object.room);
-  console.log(object.dates);
-  console.log(object);
-  $("#datesInfo").html(object.dates);
+  object.dates.split(",").forEach(function(d){
+    $("#datesInfo").append("<li>" + d + "</li>");
+  });
 
   $("#wrapper").hide();
   $("#submitPage").show();

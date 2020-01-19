@@ -111,10 +111,21 @@ button, .button{
     top: 50%;
     transform: translateY(-50%);
     position: relative;
+    text-align: center;
+}
+
+#submitPage h1{
+    margin-bottom: 5px;
 }
 
 #submitPage p{
-    text-align: center;
+    margin: 0;
+}
+
+#submitPage ul{
+    text-align: left;
+    width: 300px;
+    margin: 20px auto;
 }
 
 #refreshPage{
