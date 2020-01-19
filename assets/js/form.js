@@ -136,10 +136,30 @@ $form.on('submit',function(e){
     data: $form.serializeObject()
   })
 
+  function formatDate(d){
+      console.log(d);
+      let date = new Date(d.split(" ")[0]);
+      let startTime = d.split(" ")[1].split("-")[0].replace(/\:00$/g, "");
+      let endTime = d.split(" ")[1].split("-")[1].replace(/\:00$/g, "");
+
+      function formatTime(t){
+          var hours = parseInt(t.split(":")[0]);
+          var hoursFormatted = hours % 12;
+          hoursFormatted = hoursFormatted ? hoursFormatted : 12;
+
+          var minutes = t.split(":")[1]
+
+          return `${hoursFormatted}:${minutes} ${hours < 12 ? "AM" : "PM"}`
+      }
+
+      var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      return `${formatTime(startTime)} - ${formatTime(endTime)} on ${mS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()} `
+  }
+
   var object = $form.serializeObject();
   $("#roomInfo").html(object.room);
-  object.dates.split(",").forEach(function(d){
-    $("#datesInfo").append("<li>" + d + "</li>");
+  object.dates.split(", ").forEach(function(d){
+    $("#datesInfo").append("<li>" + formatDate(d) + "</li>");
   });
 
   $("#wrapper").hide();
