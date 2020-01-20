@@ -58,6 +58,13 @@ body{
     outline: none;
 }
 
+#calendar-container .fa-times{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
 button, .button{
     background: #2C3E50;
     border: none;

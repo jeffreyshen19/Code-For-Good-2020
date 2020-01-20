@@ -50,7 +50,10 @@ function confirmSelection(){
         title: "Your Booking Request",
         start: currentSelection.start,
         end: currentSelection.end,
-        className: "event-selected"
+        className: "event-selected",
+        extendedProps: {
+            deletable: true
+        }
     })
     currentSelection = null;
 }
@@ -115,7 +118,12 @@ function generateCalendar(){
         timeZone: "America/New_York",
         unselectAuto: false,
         nowIndicator: true, //Show current time
-        businessHours: availability[roomSelected] //get availability, based on the room selected;
+        businessHours: availability[roomSelected], //get availability, based on the room selected;,
+        eventRender: function (info) { //Add ability to delete if the element was created by the user
+            if(info.event.extendedProps.deletable){
+                $(info.el).append("<i class = 'fas fa-times'></i>");
+            }
+        }
     });
 
     calendar.render();
