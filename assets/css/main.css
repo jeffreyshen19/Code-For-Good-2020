@@ -223,3 +223,27 @@ button, .button{
     padding: 5px;
     background: #3a539b;
 }
+
+/* Terms */
+#terms-and-conditions{
+    position: absolute;
+    width: 60%;
+    margin: 0 auto;
+    height: 80%;
+    overflow-y: scroll;
+    top: 10%;
+    left: 20%;
+    z-index: 100;
+    background: white;
+    padding: 10px 40px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.19)
+}
+
+#terms-and-conditions .close{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}

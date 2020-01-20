@@ -3,6 +3,9 @@
 <head>
     <meta charset = 'utf-8' />
 
+    <!-- Import Font Awesome -->
+    <link href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel = 'stylesheet' type = "text/css"/>
+
     <!-- Import FullCalendar -->
     <link href = './includes/fullcalendar/packages/core/main.min.css' rel = 'stylesheet' type = "text/css"/>
     <link href = './includes/fullcalendar/packages/daygrid/main.min.css' rel = 'stylesheet' type = "text/css"/>
@@ -89,7 +92,7 @@
 
                     <!-- Terms of Service -->
                     <p class= "label required">Please check the box below:</p>
-                    <input type="checkbox" name="verification" value="I agree to the Terms & Conditions." required>I agree to the Terms & Conditions.<br>  <!--TODO: link ToS-->
+                    <input type="checkbox" name="verification" value="I agree to the Terms & Conditions." required> I agree to the <a href = "#" onclick = "openTerms()">Terms & Conditions</a>.<br>  <!--TODO: link ToS-->
 
                     <!-- Signature -->
                     <p class= "label required">Form completed by</p>
@@ -102,7 +105,96 @@
         </form>
     </div>
 
+    <!-- Terms and Conditions -->
+    <div id = "terms-and-conditions">
+        <a href = "" onclick = "closeTerms()" class = "close"><i class = "fas fa-times"></i></a>
+        <h1>Terms and Conditions</h1>
+        <p>YWCA Residents and Tenants. The Renter and all associated members, guests, invitees, etc. will be respectful of YWCA residents, tenants, staff, community members and the building.
+        <br>
+        <br>
+        Condition of Room. Renter will enter no earlier and vacate no later than agreed upon times. The Room will be left in the same state as it was found. Lights and air conditioning will be shut off and all windows and doors closed. Please do not drag furniture on the floors of any YWCA Cambridge rooms.
+        <br>
+        <br>
+        Library Reservations Outside of Business Hours. For library room rentals outside of business hours (M-F 9am - 5pm), Renter will report to the Tanner Residence front desk (see Exhibit A) before rental time period to sign out Library keys and will return keys after the rental time period. At least one week prior to Rental, Renter will provide a copy of photo ID or headshot to YWCA Cambridge staff person, Carol Lyons, clyons@ywcacam.org, in order to be authorized to sign out keys.
+        <br>
+        <br>
+        Elevator. To use the elevator in the Admin Building (7 Temple Street), a fob is required. The fob is attached to the Library keys that are signed out at the Tanner front desk. Please see point 3 to set up authorization.
+        <br>
+        <br>
+        Non-Discrimination. Renter must subscribe to the YWCA USA MISSION: “Eliminating Racism” and “Empowering Women.”
+        <br>
+        <br>
+        Emergencies. If any problem arises during the Rental time period, the Renter will immediately confer with the YWCA staff member on duty at Tanner Residence. This includes alarms, clogged or overflowing toilets, injuries etc.
+        <br>
+        <br>
+        Entering & Exiting. Renter, attendees, or members of the public are required to enter and exit through the front entrance at 7 Temple Street.
+        <br>
+        <br>
+        Trash & Recycling. Renter will remove any trash or recycling that has accumulated during the rental to the recycling bins and dumpster in the Tanner parking lot.
+        <br>
+        <br>
+        NO Alcohol and/or Drugs, Smoking, or Animals. Renter will not bring or permit alcoholic beverages or controlled substances to be brought into or consumed in the Building or in the neighborhood of the Building. Renter will not permit smoking of cigarettes, cigars, pipes, controlled substances or other materials in the Building. Candles are not allowed in any YWCA Building. Renter will not bring or permit any animals (except service dogs) to be brought into the Building.
+        <br>
+        <br>
+        Payment of Rental Fees. For a recurring Rental, Rental Fees are due and payable to the YWCA Cambridge office by the first of the month. For a one-time Rental, the Rental Fee due on or before the start time of the rental time period. Rental fees will be paid by check or money order made payable to “YWCA Cambridge”. No cash. Rental fees are not refundable unless rental is cancelled by the YWCA Cambridge due to unexpected circumstances, see point 10.
+        <br>
+        <br>
+        Closures. If the YWCA does not make the room available to the Renter for an unexpected reason, then at the option of the Renter, the YWCA will either refund the rental fee for the period the room is unavailable or reschedule the rental time period for another date at the same rental fee. If the YWCA intends to cancel a rental date due to weather conditions, the YWCA will notify the Renter of such closing, except when unforeseen conditions prevent such notification. If the YWCA requires the rental space for another function, the YWCA will provide notice and will either offer similar space on the premises or the option to cancel this agreement.
+        <br>
+        <br>
+        Safety: Laws and Regulations. Renter will comply with all rules, ordinances, regulations, and requirements of the City of Cambridge and its Fire Department, Police Department, Licensing Commission, and all other applicable agencies of the Commonwealth of Massachusetts.  Renter will keep all exits clear and will not permit occupancy more than the Maximum Occupancy. In the event of a fire alarm, Renter agrees to vacate the Building immediately and to remain outside the Building until receiving permission to re-enter. There will be no reduction in the rental fee for the time missed due to a fire alarm.
+        <br>
+        <br>
+        Security Deposit. The YWCA acknowledges receipt of the agreed upon security deposit. The security deposit will be returned to the Renter within thirty (30) days of the last rental time period, provided that the Renter has paid all obligations to the YWCA and has complied with all provisions of this agreement.
+        <br>
+        <br>
+        Property and Equipment. Renter is responsible for providing their own equipment. Upon prior request, the YWCA Cambridge will provide chairs and/or tables. Renter will neither take any YWCA equipment from the Building nor leave any of Renter’s equipment in the Building at the end of any rental time period. The YWCA assumes no responsibility or liability for any of Renter's equipment stored on the YWCA Cambridge's premises.
+        <br>
+        <br>
+        NO Admission or Entrance Fees. Renter will not charge any admission, entrance or other fee at the door or in advance for its guests or invitees.
+        <br>
+        <br>
+        Music. Renter who is allowed to bring musical equipment must maintain noise level in accordance with the City of Cambridge’s noise ordinance. No live band music or music played through loudspeakers is permitted after 9:30pm. All music must be completely shut off by 9:30pm. No events with disk jockeys are permitted.
+        <br>
+        <br>
+        Building Privileges. Renter and Renter's officers, members, employees, guests and invitees must confine their use of the Building to the room, the bathroom facilities designated for Renter’s use by the YWCA, and the passageways from the room or bathrooms to the front lobby. Use of any other part of the Building is prohibited.
+        <br>
+        <br>
+        Parking. The YWCA Cambridge does not provide parking for Renters or any of their patrons. There is no parking allowed at the building. Renter and its patrons who violate this provision will be towed at their own cost.
+        <br>
+        <br>
+        Indemnity. Renter releases and agrees to hold the YWCA harmless from all loss, damages and costs (including attorney’s fees) resulting from any injury to persons or property including injury to the persons or property of the Renter and its officers, members, employees, invitees, guests and/or third parties.  Renter will report any injury or loss to the YWCA Cambridge staff within 24 hours.
+        <br>
+        <br>
+        Free Rentals. The YWCA Cambridge can only permit up to ten hours of free rental space per week to non-profit organizations and community groups. This will be allotted on a first come, first serve basis. A non-paying Renter might be subject to being rescheduled or moved to a different room by the YWCA Cambridge if a paying Renter requests same space and time as the free rental.
+        <br>
+        <br>
+        Violations. Violation of this agreement may result in loss of all future rights and privileges to use the Building. YWCA Cambridge may order Renter to vacate the room immediately at any time that the room is being used in violation of the terms of this agreement.
+        <br>
+        <br>
+        Holidays. The YWCA Cambridge is closed on all major holidays including New Year’s Eve Day, meetings may still be held.
+        <br>
+        <br>
+        New Year’s Day<br>
+        Martin Luther King’s Birthday<br>
+        President’s Day<br>
+        Patriot’s Day <br>
+        Memorial Day<br>
+        Independence Day<br>
+        Labor Day<br>
+        Columbus Day<br>
+        Veteran’s Day<br>
+        Thanksgiving Day<br>
+        Day After Thanksgiving<br>
+        Christmas Day*<br>
+        <br>
+        If you have any questions or need more information please contact Carol Lyons at clyons@ywcacam.org or (617) 491-6050.
+        </p>
+    </div>
+
+    <!-- Confirmation Page -->
     <div id="submitPage">
+
         <h1>Thank You!</h1>
         <p>You've successfully submitted a booking request for the <span id="roomInfo"></span> for the following times:</p>
         <ul id="datesInfo"></ul>
