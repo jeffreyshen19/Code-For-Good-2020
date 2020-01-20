@@ -165,3 +165,11 @@ $form.on('submit',function(e){
   $("#wrapper").hide();
   $("#submitPage").show();
 })
+
+function openTerms(){
+    $("#terms-and-conditions").show();
+}
+
+function closeTerms(){
+    $("#terms-and-conditions").hide();
+}
