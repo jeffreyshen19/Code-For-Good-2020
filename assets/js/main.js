@@ -47,6 +47,7 @@ function confirmSelection(){
     $(".tooltip").remove();
     calendar.unselect();
     calendar.addEvent({
+        id: `${date} ${startTime}-${endTime}`,
         title: "Your Booking Request",
         start: currentSelection.start,
         end: currentSelection.end,
@@ -62,6 +63,21 @@ function cancelSelection(){
     $(".tooltip").remove();
     calendar.unselect();
     currentSelection = null;
+}
+
+function deleteSelection(id){
+    //Delete event from calendar
+    let event = calendar.getEventById(id)
+    if(event) event.remove();
+
+    //Remove event from selections
+    let index = allSelections.indexOf(id);
+    if (index > -1) allSelections.splice(index, 1);
+
+    //Update form
+    $('#date-input').prop('readonly',false);
+    $('#date-input').val(allSelections.join(", "));
+    $('#date-input').prop('readonly',true);
 }
 
 function generateCalendar(){
@@ -121,7 +137,7 @@ function generateCalendar(){
         businessHours: availability[roomSelected], //get availability, based on the room selected;,
         eventRender: function (info) { //Add ability to delete if the element was created by the user
             if(info.event.extendedProps.deletable){
-                $(info.el).append("<i class = 'fas fa-times'></i>");
+                $(info.el).append("<i class = 'fas fa-times' onclick = 'deleteSelection(\"" + info.event.id + "\")'></i>");
             }
         }
     });
