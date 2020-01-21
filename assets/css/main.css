@@ -58,6 +58,25 @@ body{
     outline: none;
 }
 
+#calendar-container #form .image-input{
+    margin-top: 5px;
+    width: calc(50% - 8px);
+    vertical-align: text-top;
+    display: inline-block;
+}
+
+#calendar-container #form .image-input:first-of-type{
+    margin-right: 0px;
+}
+
+#calendar-container #form .image-input:nth-of-type(2){
+    margin-left: 4px;
+}
+
+#calendar-container #form .image-input img{
+    width: 100%;
+}
+
 #calendar-container .fa-times{
     position: absolute;
     top: 5px;
