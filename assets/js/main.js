@@ -193,7 +193,7 @@ $(document).ready(function() {
                     }
                 }
                 catch(e){
-
+                    if(val == "FALSE") break;
                 }
             }
 
