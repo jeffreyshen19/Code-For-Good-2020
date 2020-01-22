@@ -146,7 +146,7 @@ function generateCalendar(){
 
     // Grab existing events and put them on calendar
     events.forEach(function(d){
-        if(d.room == roomNames[roomSelected]){
+        if(d.room.toLowerCase() == roomNames[roomSelected]){
             calendar.addEvent({
                 title: d.approved == "TRUE" ? "Already Booked" : "Pending Booking Request",
                 start: d.date + "T" + d.start_time.trim(),
@@ -173,6 +173,8 @@ $(document).ready(function() {
             data = JSON.parse(data.replace("gdata.io.handleScriptLoaded(", "").replace(");", "")).feed.entry;
             var headers = [];
 
+            console.log(data);
+
             // Parse data into a JSON object
             for(var r = 0; r < data.length; r++){
                 var cell = data[r]["gs$cell"],
@@ -180,10 +182,15 @@ $(document).ready(function() {
                     col = cell.col - 1;
                 var val = cell["$t"];
 
-                if(row == 0) headers.push(val);
-                else{
-                    if(col == 0) events.push({}) // New row
-                    events[row - 1][headers[col]] = val;
+                try{
+                    if(row == 0) headers.push(val);
+                    else{
+                        if(col == 0) events.push({}) // New row
+                        events[row - 1][headers[col]] = val;
+                    }
+                }
+                catch(e){
+
                 }
             }
 

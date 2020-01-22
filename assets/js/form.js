@@ -137,7 +137,6 @@ $form.on('submit',function(e){
   })
 
   function formatDate(d){
-      console.log(d);
       let date = new Date(d.split(" ")[0]);
       let startTime = d.split(" ")[1].split("-")[0].replace(/\:00$/g, "");
       let endTime = d.split(" ")[1].split("-")[1].replace(/\:00$/g, "");
