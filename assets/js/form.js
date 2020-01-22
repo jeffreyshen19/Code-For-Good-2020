@@ -129,12 +129,19 @@ $form.on('submit',function(e){
   if(!validateForm()){
     return false;
   }
-  var jqxhr = $.ajax({
-    url: url,
-    method: "GET",
-    dataType: "json",
-    data: $form.serializeObject()
-  })
+  console.log($form.serializeObject());
+  console.log(typeof $form.serializeObject());
+  $form.serializeObject().dates.split(", ").forEach(function(d){ //If we have multiple dates, split them into multiple rows, as carol requested
+      let data = $form.serializeObject();
+      data.dates = d;
+
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: data
+      })
+  });
 
   function formatDate(d){
       let date = new Date(d.split(" ")[0]);

@@ -173,8 +173,6 @@ $(document).ready(function() {
             data = JSON.parse(data.replace("gdata.io.handleScriptLoaded(", "").replace(");", "")).feed.entry;
             var headers = [];
 
-            console.log(data);
-
             // Parse data into a JSON object
             for(var r = 0; r < data.length; r++){
                 var cell = data[r]["gs$cell"],
