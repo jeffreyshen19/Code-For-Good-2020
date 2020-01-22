@@ -80,6 +80,20 @@ function deleteSelection(id){
     $('#date-input').prop('readonly',true);
 }
 
+function updateEvents(){
+    // Grab existing events and put them on calendar
+    events.forEach(function(d){
+        if(d.room.toLowerCase() == roomNames[roomSelected]){
+            calendar.addEvent({
+                title: d.approved == "TRUE" ? "Already Booked" : "Pending Booking Request",
+                start: d.date + "T" + d.start_time.trim(),
+                end: d.date + "T" + d.end_time.trim(),
+                className: d.approved == "TRUE" ? "booked" : "pending"
+            })
+        }
+    });
+}
+
 function generateCalendar(){
     // Store availability for both the library and fuller room
     let availability = [
@@ -144,17 +158,7 @@ function generateCalendar(){
 
     calendar.render();
 
-    // Grab existing events and put them on calendar
-    events.forEach(function(d){
-        if(d.room.toLowerCase() == roomNames[roomSelected]){
-            calendar.addEvent({
-                title: d.approved == "TRUE" ? "Already Booked" : "Pending Booking Request",
-                start: d.date + "T" + d.start_time.trim(),
-                end: d.date + "T" + d.end_time.trim(),
-                className: d.approved == "TRUE" ? "booked" : "pending"
-            })
-        }
-    });
+    updateEvents();
 }
 
 function changeCalendar(e){
@@ -164,6 +168,7 @@ function changeCalendar(e){
 }
 
 $(document).ready(function() {
+    generateCalendar();
     //Grab data
     $.ajax({
         type: "GET",
@@ -192,8 +197,7 @@ $(document).ready(function() {
                 }
             }
 
-            generateCalendar();
-
+            updateEvents();
         }
      });
 })
