@@ -8,7 +8,8 @@ let roomSelected = LIBRARY,
     events = [],
     currentSelection,
     calendar,
-    allSelections = [];
+    allSelections = [],
+    requestFinished = false;
 
 function handleSelection(selectionInfo){
     currentSelection = selectionInfo;
@@ -145,6 +146,9 @@ function generateCalendar(){
         selectConstraint: "businessHours",
         selectOverlap: false,
         select: handleSelection,
+        selectAllow: function(){
+            return requestFinished;
+        },
         timeZone: "America/New_York",
         unselectAuto: false,
         nowIndicator: true, //Show current time
@@ -197,6 +201,7 @@ $(document).ready(function() {
                 }
             }
 
+            requestFinished = true;
             updateEvents();
         }
      });
