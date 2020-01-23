@@ -2,7 +2,7 @@
 
 const LIBRARY = 0,
       FULLER = 1,
-      roomNames = ["library", "fuller"];
+      roomNames = ["library", "fuller room"];
 
 let roomSelected = LIBRARY,
     events = [],
@@ -166,7 +166,10 @@ function generateCalendar(){
 }
 
 function changeCalendar(e){
-    roomSelected = roomNames.indexOf(e.value);
+    console.log("got here");
+    console.log(e.value);
+    roomSelected = roomNames.indexOf(e.value.toLowerCase());
+    console.log(roomSelected);
     $("#calendar").empty();
     generateCalendar();
 }

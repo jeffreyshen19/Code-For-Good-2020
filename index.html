@@ -40,11 +40,11 @@
                     <p class= "label required">Which room would you like to rent?</p>
                     <div class = "image-input">
                         <img src = "./assets/images/library.jpg">
-                        <input type="radio" name="room" value="Library" checked required onclick="validateRooms()" onchange="changeCalendar(this)"> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
+                        <input type="radio" name="room" value="Library" checked required  onchange="changeCalendar(this);validateRooms();"> Library, up to 30 people, $50/2hr (2 Hour Minimum).<br>
                     </div>
                     <div class = "image-input">
                         <img src = "./assets/images/fuller.jpg">
-                        <input type="radio" name="room" value="Fuller Room" onclick="validateRooms()" onchange="changeCalendar(this)" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
+                        <input type="radio" name="room" value="Fuller Room" onchange="changeCalendar(this);validateRooms();" required> Fuller Room, up to 50 people, $100 flat fee for full day (8 hours), $50 flat rate for half day (4 hours)<br>
                     </div>
 
                     <!-- Date -->
