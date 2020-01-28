@@ -21,6 +21,9 @@ body{
         width: 100%;
         height: calc(100vh - 20px);
     }
+    #form{
+        width:97%;
+    }
 }
 
 
@@ -35,8 +38,6 @@ body{
 }
 
 #calendar-container #form.right{
-    max-width: 400px;
-    min-width: 200px;
     flex-grow: 1;
     background: #eee;
     border-radius: 5px;
