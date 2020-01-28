@@ -1,6 +1,6 @@
 # YWCA Room Booking Calendar
 
-This repository implements an interactive calendar that allows people to book rooms from YWCA Cambridge. 
+This repository implements an interactive calendar that allows people to book rooms from [YWCA Cambridge](https://ywcacam.org/). 
 
 ![](assets/images/screenshot.png)
 
@@ -16,5 +16,5 @@ This widget is completely static (no back-end), allowing it to be hosted entirel
 
 ## Acknowledgements 
 * Project by Annie Liu, Jeffrey Shen, Sarah Wertheimer, Katherine Yang
-* Special thanks to MIT Code for Good and YWCA Cambridge 
+* Special thanks to [MIT Code for Good](http://codeforgood.mit.edu/) and [YWCA Cambridge](https://ywcacam.org/) 
 * [https://fullcalendar.io/](Fullcalendar) was used to power the calendar
