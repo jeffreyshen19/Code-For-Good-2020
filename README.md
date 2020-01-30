@@ -12,7 +12,7 @@ This repository implements an interactive calendar that allows people to book ro
 
 ## Deployment Instructions 
 
-This widget is completely static (no back-end), allowing it to be hosted entirely on Github pages, and then embedded on the YWCA Cambridge website using an Iframe. To deploy any changes to production, just push to the `master` branch.
+This widget is completely static (no back-end), allowing it to be hosted entirely on Github pages, and then embedded on the YWCA Cambridge website using an Iframe. Two Google sheets, linked using the IMPORTRANGE function, were used to keep track of booking requests and approved bookings. To deploy any changes to production, just push to the `master` branch.
 
 ## Acknowledgements 
 * Project by Annie Liu, Jeffrey Shen, Sarah Wertheimer, Katherine Yang
