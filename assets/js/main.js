@@ -84,9 +84,8 @@ function deleteSelection(id){
 function updateEvents(){
     // Grab existing events and put them on calendar
     events.forEach(function(d){
-      console.log(d);
         if(d.room.toLowerCase() == roomNames[roomSelected] && d.carols_approval != "FALSE"){
-            calendar.addEvent({
+            if(d.start_time && d.date && d.end_time && d.approved) calendar.addEvent({
                 title: d.approved == "TRUE" ? "Already Booked" : "Pending Booking Request",
                 start: d.date + "T" + d.start_time.trim(),
                 end: d.date + "T" + d.end_time.trim(),
@@ -167,11 +166,12 @@ function generateCalendar(){
 }
 
 function changeCalendar(e){
-    console.log("got here");
-    console.log(e.value);
     roomSelected = roomNames.indexOf(e.value.toLowerCase());
-    console.log(roomSelected);
     $("#calendar").empty();
+    allSelections = [];
+    $('#date-input').prop('readonly',false);
+    $('#date-input').val(allSelections.join(", "));
+    $('#date-input').prop('readonly',true);
     generateCalendar();
 }
 
@@ -204,6 +204,8 @@ $(document).ready(function() {
                     if(val == "FALSE") break;
                 }
             }
+
+            console.log(events);
 
             requestFinished = true;
             updateEvents();
