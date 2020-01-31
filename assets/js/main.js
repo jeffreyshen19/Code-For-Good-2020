@@ -84,7 +84,8 @@ function deleteSelection(id){
 function updateEvents(){
     // Grab existing events and put them on calendar
     events.forEach(function(d){
-        if(d.room.toLowerCase() == roomNames[roomSelected]){
+      console.log(d);
+        if(d.room.toLowerCase() == roomNames[roomSelected] && d.carols_approval != "FALSE"){
             calendar.addEvent({
                 title: d.approved == "TRUE" ? "Already Booked" : "Pending Booking Request",
                 start: d.date + "T" + d.start_time.trim(),
