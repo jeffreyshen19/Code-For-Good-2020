@@ -5,23 +5,42 @@ body{
     width: 100%;
 }
 
-#calendar-container{
-    display: flex;
-    height: calc(100vh - 20px);
+@media only screen and (min-width: 700px) {
+    #calendar-container{
+        width: 100%;
+        height: calc(100vh - 20px);
+        display: grid;
+        grid-template-areas:
+            "calendar form";
+        grid-template-columns: 2fr 1fr;
+    }
 }
+
+@media only screen and (max-width: 700px) {
+    #calendar-container{
+        width: 100%;
+        height: calc(100vh - 20px);
+    }
+    #form{
+        width:97%;
+    }
+}
+
 
 #calendar-container > div{
     margin: 10px;
 }
 
 #calendar-container #calendar.left{
-    width: 66%;
+    min-width: 400px;
+    flex-grow: 2;
+    
 }
 
 #calendar-container #form.right{
+    flex-grow: 1;
     background: #eee;
     border-radius: 5px;
-    width: 34%;
     padding: 0 20px 15px;
     box-sizing: border-box;
     font-size: 15px;
